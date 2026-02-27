@@ -4,7 +4,7 @@
   tasks:
     - name: update machine
       shell: |
-        if [ \`yum update -y | egrep 'No packages marked for update|Nothing to do' | wc -l\` == 0 ]
+        if [ `yum update -y | egrep 'No packages marked for update|Nothing to do' | wc -l` == 0 ]
         then
           echo 'Yes'
         else
@@ -12,10 +12,10 @@
         fi
     - name: reboot the server if required
       shell: |
-        if [ \`needs-restarting -r | egrep 'Reboot is required' | wc -l\` == 0 ]
+        if [ `needs-restarting -r | egrep 'Reboot is required' | wc -l` == 0 ]
         then
           echo 'No'
         else
           echo 'Yes'
-          shutdown -r now
+          reboot
         fi
