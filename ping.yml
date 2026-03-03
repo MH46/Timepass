@@ -1,6 +1,6 @@
 ---
 - name: Ping target IP 192.168.0.104
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Ping 192.168.0.104
       ansible.builtin.command: ping -c 4 192.168.0.104
