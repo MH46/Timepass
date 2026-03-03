@@ -1,0 +1,8 @@
+---
+- name: Ping target IP 192.168.0.104
+  hosts: localhost
+  tasks:
+    - name: Ping 192.168.0.104
+      ansible.builtin.command: ping -c 4 192.168.0.104
+      register: ping_output
+    - debug: var=ping_output.stdout_lines
